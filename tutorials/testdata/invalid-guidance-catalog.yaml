@@ -1,0 +1,13 @@
+# Intentionally invalid fixture used to verify that validator catches invalid schemas.
+# Expected to FAIL CUE validation against #GuidanceCatalog.
+metadata:
+  id: INVALID.GUIDANCE.001
+  type: NotARealType
+  gemara-version: "1.6.0"
+  description: Intentionally malformed fixture for negative validation testing.
+  # author is intentionally missing
+guidelines:
+  - id: BAD.GL01
+    title: Invalid guideline missing required group
+    objective: This must fail validation.
+    state: Active

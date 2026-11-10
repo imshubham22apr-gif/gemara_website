@@ -1,0 +1,47 @@
+# Manifest of tutorial examples for schema validation.
+# Each entry declares:
+#   file: path relative to repository root
+#   cue-definition: CUE schema definition expression (e.g. #ControlCatalog)
+#   schema-ref: Gemara schema release ref to validate against
+#   kind: full (complete valid artifact) | invalid-fixture (deliberately malformed smoke test)
+
+examples:
+  - file: tutorials/controls/capabilities.yaml
+    cue-definition: "#CapabilityCatalog"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/controls/control-catalog.yaml
+    cue-definition: "#ControlCatalog"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/controls/threat-catalog.yaml
+    cue-definition: "#ThreatCatalog"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/guidance/guidance-example.yaml
+    cue-definition: "#GuidanceCatalog"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/mapping/mapping-document.yaml
+    cue-definition: "#MappingDocument"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/policy/policy-example.yaml
+    cue-definition: "#Policy"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/policy/risk-catalog-example.yaml
+    cue-definition: "#RiskCatalog"
+    schema-ref: v1.6.0
+    kind: full
+
+  - file: tutorials/testdata/invalid-guidance-catalog.yaml
+    cue-definition: "#GuidanceCatalog"
+    schema-ref: v1.6.0
+    kind: invalid-fixture

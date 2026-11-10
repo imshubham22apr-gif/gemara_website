@@ -47,6 +47,9 @@ Express how entries in a source artifact (e.g., guidance, principle, or control 
 
 Create a policy document that translates risk appetite into mandatory rules — [Policy Guide](policy/policy-guide) — scope, imports, adherence, and risks (Layer 3).
 
+### Documenting enforcement actions (Layer 6)
+
+When evaluations trigger automated remediation, quarantine, or approved exceptions → [Enforcement Log Guide](enforcement/enforcement-log-guide) — capture actions, steps, dispositions, policy references, and evaluation findings (Layer 6).
 ### Creating a risk catalog
 
 When you need a structured inventory of organizational or system risks—**risk categories** (appetite, optional max-severity), per-risk **severity**, optional **`rank`** for ordering within the catalog, optional RACI **owner** and **impact**, and optional **threats** links backed by `metadata.mapping-references`—so policies can reference mitigated or accepted risks → [Risk Catalog Guide](policy/risk-catalog-guide) (Layer 3).
@@ -59,6 +62,7 @@ When you need a structured inventory of organizational or system risks—**risk 
 | **Layer 2** — Controls | Threat Catalog + Control Catalog (assessment requirements, threats) | [Threat Assessment](controls/threat-assessment-guide), [Control Catalog](controls/control-catalog-guide) |
 | **Layer 3** — Policy   | Policy Document (scope, imports, adherence)                  | [Policy Guide](policy/policy-guide) |
 | **Layer 3** — Risks    | Risk Catalog (risk categories, appetite, risks, optional rank and threat mappings) | [Risk Catalog Guide](policy/risk-catalog-guide) |
+| **Layer 6** — Enforcement | Enforcement Log (actions, dispositions, steps, justifications) | [Enforcement Log Guide](enforcement/enforcement-log-guide) |
 | **Cross-artifact**     | Mapping Document (typed `source`/`target` references, `targets` per mapping, relationship types; entry types per schema include guidelines, controls, Principle, threats, risks, and others) | [Mapping Document Guide](mapping/mapping-document-guide) |
 
 ## What You'll Need

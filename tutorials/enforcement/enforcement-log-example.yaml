@@ -1,0 +1,52 @@
+# Container Management Tool Enforcement Log (Layer 6)
+# Conforms to Gemara #EnforcementLog (enforcementlog.cue).
+# gemara-version: v1.6.0
+# See enforcement-log-guide.md for the step-by-step tutorial.
+metadata:
+  id: "enf-log-slam-cm-001"
+  type: "EnforcementLog"
+  gemara-version: "1.6.0"
+  version: "1.0.0"
+  description: "Enforcement actions executed against container management tools following security evaluation findings."
+  author:
+    id: "sec-ops-automation"
+    name: "Security Operations Automated Enforcement Engine"
+    type: "Software"
+  mapping-references:
+    - id: "EVAL-LOG"
+      title: "Container Security Evaluation Log"
+      version: "1.0.0"
+      url: "https://example.com/evaluations/eval-log-slam-cm-001.yaml"
+    - id: "ORG-POLICY"
+      title: "Information Security Policy for Cloud and Web Applications"
+      version: "1.0.0"
+      url: "https://example.com/policies/org-policy-001.yaml"
+target:
+  id: "svc-container-mgmt-worker-01"
+  name: "Container Management Worker Node"
+  type: "Software"
+  environment: "production"
+  owner:
+    name: "Platform Infrastructure Team"
+    email: "platform-infra@example.com"
+disposition: "Enforced"
+actions:
+  - disposition: "Enforced"
+    message: "Quarantined container execution engine due to unmitigated privileged container escape risk (evaluation finding Failed)."
+    start: "2026-11-10T14:30:00Z"
+    end: "2026-11-10T14:30:15Z"
+    method:
+      reference-id: "ORG-POLICY"
+      entry-id: "rule-disallow-privileged"
+      remarks: "Enforces automated quarantine action defined under Policy section rule-disallow-privileged."
+    steps:
+      - "drain-workload-node:worker-01"
+      - "revoke-cluster-credentials"
+      - "isolate-network-namespace"
+    justification:
+      assessments:
+        - result: "Failed"
+          log:
+            reference-id: "EVAL-LOG"
+            entry-id: "eval-slam-cm-chk-01"
+            remarks: "Privileged container flag detected on workload in production environment."
